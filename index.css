@@ -1,0 +1,314 @@
+html,body
+{
+    height: 120%;
+    margin: 0;
+}
+
+body
+{
+    --color1:#BBC6C8;
+    --color2:#e8ecec;
+    background-color: var(--color1);
+    position: relative;
+}
+.Body
+{
+    /* overflow:auto; */
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+    background-color: var(--color2);
+    /* position: relative; */ 
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(8,1fr);
+    grid-template-areas:
+    'aside header header header header'
+    'aside main main main main'
+    'aside main main main main'
+    'aside main main main main'
+    'aside main main main main'
+    'aside main main main main'
+    'aside main main main main'
+    'aside main main main main'
+ 
+
+
+    ;
+}
+header
+{
+
+    grid-area: header;
+    background-color: var(--color2);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+}
+.find
+{
+    position: relative;
+    flex-grow: 1;
+}
+.find input
+{
+    position: absolute;
+    top: 60%;
+    transform: translate(0,-50%);
+    left: 10%;
+    width: 220px;
+    height: 45px;
+    background-color: transparent;
+    border:1px gray solid;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.find input::placeholder
+{
+    font-family:'Helvetica', FontAwesome, sans-serif;;
+    font-size: 15px;
+}
+
+.myaccount
+{
+    /* background-color: blueviolet; */
+    position: relative;
+    width: 25%;
+}
+.img-acc
+{
+    position: absolute;
+    top:60%;
+    left:5%;
+    transform: translate(0,-50%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.name-acc
+{
+    position: absolute;
+    top:60%;
+    transform: translate(0,-80%);
+    left:25%;
+    margin:0px;
+    font-weight:bolder;
+
+}
+.myaccount .email-acc
+{
+    position: absolute;
+    top:60%;
+    transform: translate(0,-80%);
+    left: 25%;
+    color: gray;
+}
+header::after
+{
+    content: "";
+    width: 73%;
+    position: absolute;
+    background-color: gray;
+    height: 2px;
+    left: 50%;
+    top: 12%;
+    transform: translate(-34%, 0px);
+}
+
+aside
+{
+    grid-area: aside;
+    background-color: rgb(240, 240, 234);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+aside .header
+{
+    /* background-color: blue; */
+    height: 10%;
+    position: relative;
+    
+}
+.header .logo
+{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top:70%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+}
+.header h1
+{
+    position: absolute;
+    top:50%;
+    left: 25%;
+    font-size: 30px;
+    transform: translate(20%,-100%);
+}
+aside div:nth-child(2)
+{
+    
+    position: relative;
+    height: 7%;
+
+}
+aside button
+{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 70%;
+    height: 45px;
+    background-color: #4C2BEF;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+.fa-star{font-size: 22px;font-weight: lighter;}
+aside div:nth-child(3){flex-grow: 1; position: relative;}
+aside ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    width: 73%;
+}
+ul li:nth-child(1)
+{
+    background-color: black;
+}
+ul li{
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 15px;
+    border-radius: 10px;
+}
+ul li:hover
+{
+    background-color: lightgray;
+}
+ul li:nth-child(6)
+{
+    margin-top: 45vh;
+    /* position: absolute;
+    top:85vh */
+}
+/* ul li:nth-child(7)
+{
+    position: absolute;
+    top:95vh;
+} */
+ul li a{
+    text-decoration: none;
+    color: gray;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+main
+{
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+main nav
+{
+    /* background-color: gold; */
+    position: relative;
+}
+main nav div
+{
+    position: absolute;
+    left: 8%;
+    width: 300px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+nav div button
+{
+    margin-right: 10px;
+    background-color: transparent;
+    color: rgb(172, 172, 172);
+    border: 1px solid grey;
+    border-radius: 30px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight:bolder;
+}
+nav button:hover
+{
+    padding: 0px 15px;
+    height: 35px;   
+}
+main .Main
+{
+    position: relative;
+    overflow-y: auto;
+
+}
+.Main .posts
+{
+    left: 8%;
+    position: absolute;
+    /* background-color: yellow; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+
+.post > img
+{
+    width: 90%;
+    border: 7px solid white;
+    border-radius: 15px;
+}
+.post > .account 
+{
+    position: relative;
+    height: 50px;
+}
+.account > .img-acc
+{
+    top: 50%;
+    height: 40px;
+    width: 40px;
+}
+.account .name-acc
+{
+    left: 20%;
+    font-weight: normal;
+
+}
+
+.account .views,.account .likes
+
+{
+    position: absolute;
+    top:60%;
+    transform: translate(-50%,-80%);
+    left:70%;
+    margin:0px;
+    font-size: 12px;
+    color: gray;
+}
+.account .views
+{
+    left:83%;
+
+}
